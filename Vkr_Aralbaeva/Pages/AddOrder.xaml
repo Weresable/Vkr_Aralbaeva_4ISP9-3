@@ -1,0 +1,238 @@
+﻿<Page x:Class="Vkr_Aralbaeva.Pages.AddOrder"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Vkr_Aralbaeva.Pages"
+      mc:Ignorable="d" 
+       d:DesignHeight="900" d:DesignWidth="1218"
+      Title="AddOrder">
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border CornerRadius="20" Grid.ColumnSpan="3">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Offset="0.338" Color="White"/>
+                    <GradientStop Offset="1" Color="#7FFFFFFF"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="12*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Оформление заказа"
+                       FontFamily="Montserrat"
+                        FontSize="24"
+                       FontWeight="SemiBold"
+                        Foreground="#04306C"
+                        Margin="38 30 30 0"></TextBlock>
+            <TextBlock Text="Информация о клиенте"
+                       FontFamily="Montserrat"
+                        FontSize="24"
+                       FontWeight="SemiBold"
+                        Foreground="#04306C"
+                        Margin="38 20 30 0"
+                       Grid.Row="1"></TextBlock>
+            <StackPanel Margin="38 0 71 0" Grid.Row="2">
+                <TextBlock Text="Фамилия"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 0 0 12.5 "></TextBlock>
+                <TextBox Height="53"
+                     x:Name="tbLastName"
+                         VerticalContentAlignment="Center"
+                         Padding="10"
+                         IsReadOnly="True"></TextBox>
+                <TextBlock Text="Имя"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 30 0 12.5 "
+                           ></TextBlock>
+                <TextBox Height="53"
+                      x:Name="tbFirstName"
+                         VerticalContentAlignment="Center"
+                         Padding="10"
+                         IsReadOnly="True"></TextBox>
+                <TextBlock Text="Отчество"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 30 0 12.5 "></TextBlock>
+                <TextBox Height="53"
+                      x:Name="tbPatr"
+                         VerticalContentAlignment="Center"
+                         Padding="10"
+                         IsReadOnly="True"></TextBox>
+                <TextBlock Text="Номер телефона"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 30 0 12.5 "></TextBlock>
+                <TextBox Height="53"
+                      x:Name="tbPhone"
+                         VerticalContentAlignment="Center"
+                         Padding="10"
+                         IsReadOnly="True"></TextBox>
+                <TextBlock Text="Email"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 30 0 12.5 "></TextBlock>
+                <TextBox Height="53"
+                      x:Name="tbEmail"
+                         VerticalContentAlignment="Center"
+                         Padding="10"
+                         IsReadOnly="True"></TextBox>
+                <TextBlock Text="Дата рождения"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 30 0 12.5 "></TextBlock>
+                <TextBox Height="53"
+                      x:Name="tbDateBirth"
+                         VerticalContentAlignment="Center"
+                         Padding="10"
+                         IsReadOnly="True"></TextBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="2"
+                    Width="186"
+                    Height="53"
+                    Background="#091A36"
+                    VerticalAlignment="Top"
+                    Content="Выбрать клиента"
+                    Foreground="White"
+                    FontSize="14"
+                       FontFamily="Monteserrat" Click="Button_Click"></Button>
+            <Button Grid.Row="2"
+                    Width="186"
+                    Height="53"
+                    Background="#F2C94C"
+                    Content="Создать заказ"
+                    Foreground="#091A36"
+                     FontSize="14"
+                       FontFamily="Monteserrat"
+                    VerticalAlignment="Bottom"
+                    Margin="0 48" Click="btnAddOrder_Click"></Button>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="txbAuthUser"
+                       TextAlignment="Right"
+                        FontFamily="Montserrat"
+                        FontSize="18"
+                        Foreground="#04306C"
+                       Margin="0 30 30 0"></TextBlock>
+           
+            <Grid Grid.Row="2">
+                <Border 
+                    
+                    CornerRadius="10"
+                    Margin="0 0 10 10">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Offset="0.338" Color="#04306C"/>
+                            <GradientStop Offset="1" Color="#091A36"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                </Border>
+                <StackPanel>
+                    <TextBlock 
+                               FontFamily="Montserrat"
+                               FontSize="32"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               Margin="23 40 0 0"
+                               TextWrapping="Wrap"
+                               Text="Выбранная услуга"
+                               x:Name="tbNameService"></TextBlock>
+                    <TextBlock  
+                               FontFamily="Montserrat"
+                               FontSize="16"
+                               Foreground="White"
+                               TextWrapping="Wrap"
+                               Margin="23 20 50 0"
+                               FontWeight="Medium"
+                               Text="Информация о выбранной услуге"
+                                x:Name="tbDesService"></TextBlock>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="23 20 50 0">
+                        <TextBlock  FontFamily="Montserrat"
+                                   FontSize="16"
+                                   Foreground="White"
+                                   TextWrapping="Wrap"
+                                   FontWeight="Medium"
+                                   Text="Цена"
+                                    x:Name="tbCost"></TextBlock>
+                        <TextBlock  FontFamily="Montserrat"
+                                   FontSize="16"
+                                   Foreground="White"
+                                   TextWrapping="Wrap"
+                                   FontWeight="Medium"
+                                   x:Name="tbRubles"></TextBlock>
+
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Bottom" 
+                            Margin="22 0 0 47"
+                            Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Left">
+                    <TextBlock Text="Выбор даты услуги"
+                                FontFamily="Montserrat"
+                               FontSize="18"
+                               Foreground="White"
+                               TextWrapping="Wrap"
+                               FontWeight="SemiBold"></TextBlock>
+                    <DatePicker Width="268"
+                                Height="40"
+                                 Margin="0 12"
+                                x:Name="dateOfService"></DatePicker>
+                    <TextBlock Text="Выбор сотрудника"
+                                FontFamily="Montserrat"
+                               FontSize="18"
+                               Foreground="White"
+                               TextWrapping="Wrap"
+                               FontWeight="SemiBold" Margin="0 0 0 11"></TextBlock>
+                    <ComboBox Width="268"
+                              Height="40"
+                              x:Name="cmbWorker"
+                              FontFamily="Montserrat"
+                               FontSize="18"
+                              VerticalContentAlignment="Center"
+                             ></ComboBox>
+                    </StackPanel>
+                    <Button Width="150"
+                       Height="53"
+                       Content="Выбрать услугу"
+                       Foreground="White"
+                        FontFamily="Montserrat"
+                       Background="#091A36"
+                         Click="Btn_AddService"
+                            Margin="30"></Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
+

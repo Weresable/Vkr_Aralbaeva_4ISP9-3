@@ -1,0 +1,284 @@
+﻿<Page x:Class="Vkr_Aralbaeva.Pages.AdminService"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Vkr_Aralbaeva.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1218"
+      Title="Service">
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border CornerRadius="20" Grid.ColumnSpan="2">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Offset="0.338" Color="White"/>
+                    <GradientStop Offset="1" Color="#7FFFFFFF"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="9*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Виды услуг"
+                        FontFamily="Montserrat"
+                       FontSize="24"
+                       Foreground="#04306C"
+                       FontWeight="SemiBold"
+                       Margin="38 30 0 0"
+                       TextWrapping="Wrap"></TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <TextBox Height="53" 
+                         Width="268"
+                         Margin="38 0 0 0"
+                         x:Name="tbFind" 
+                         TextChanged="tbFind_TextChanged"
+                         FontFamily="Montserrat"
+                         FontSize="16"
+                         VerticalContentAlignment="Center"
+                         Padding="10"></TextBox>
+                <ComboBox Width="268"
+                          Height="53"
+                          Margin="20 0"
+                          x:Name="cmbSort"
+                          FontFamily="Montserrat"
+                          FontSize="16"
+                          VerticalContentAlignment="Center"
+                          Padding="10" SelectionChanged="cmbSort_SelectionChanged" Style="{DynamicResource ComboBoxStyle1}"></ComboBox>
+            </StackPanel>
+            <Grid Grid.Row="2">
+                <Border Width="700"
+                        Height="50"
+                        CornerRadius="20"
+                        HorizontalAlignment="Right" Margin="0 14 18 14">
+                    <ListView x:Name="LVTag"
+                            ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                            Background="Transparent"
+                            BorderBrush="Transparent" SelectionChanged="LVTag_SelectionChanged">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Width="100"
+                                        Height="36"
+                                            BorderThickness="2"
+                                            CornerRadius="10"
+                                        Background="#848C9B"
+                                        HorizontalAlignment="Right">
+                                    <TextBlock Text="{Binding NameTag}"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"/>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Border>
+            </Grid>
+            <ListView x:Name="LVService" Grid.Row="3" Background="Transparent" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                      Margin="38 0 0 0"
+                      BorderBrush="Transparent" SelectionChanged="LVService_SelectionChanged">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="634"
+                              Height="255">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.3*"></RowDefinition>
+                                <RowDefinition Height="2*"></RowDefinition>
+                                <RowDefinition Height="1.5*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Border CornerRadius="20" Grid.RowSpan="3">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Offset="0.338" Color="#04306C"/>
+                                        <GradientStop Offset="1" Color="#091A36"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="{Binding NameService}"
+                                FontFamily="Montserrat"
+                                FontSize="24"
+                                Margin="34 30 0 14"
+                                Foreground="White"
+                                FontWeight="SemiBold"></TextBlock>
+                            <Button Width="50"
+                                    Height="46"
+                                    Background="#848C9A"
+                                    HorizontalAlignment="Right"
+                                    Margin="10" Click="btnDelete_Click">
+                                <Image Source="/Resources/Icons/deleteicon.PNG"
+                                       Width="30"
+                                       Height="30"></Image>
+                            </Button>
+                            <TextBlock Grid.Row="1" Text="{Binding MinDescription}"
+                               FontFamily="Montserrat"
+                               FontSize="16"
+                               Margin="34 0 41 0"
+                               Foreground="White"
+                               TextWrapping="Wrap"
+                               FontWeight="Light"></TextBlock>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="34*"></ColumnDefinition>
+                                    <ColumnDefinition Width="60*"></ColumnDefinition>
+                                    <ColumnDefinition Width="503*"></ColumnDefinition>
+                                    <ColumnDefinition Width="37*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="1"
+                                       Width="60"
+                                       Height="60"
+                                       Margin="0 0 0 17">
+                                    <Image.Source>
+                                        <Binding Path="ImgSourse">
+                                            <Binding.TargetNullValue>
+                                                <ImageSource>/Resources/Icons/airplaneicon.png</ImageSource>
+                                            </Binding.TargetNullValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
+                                <StackPanel Margin="10 0" Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center">
+                                    <TextBlock  Text="{Binding Cost}" 
+                                           FontFamily="Montserrat"
+                                           FontSize="18"
+                                           Foreground="White"
+                                           FontWeight="SemiBold"></TextBlock>
+                                    <TextBlock Text=" рублей" 
+                                           FontFamily="Montserrat"
+                                           FontSize="18"
+                                           Foreground="White"
+                                           FontWeight="SemiBold"></TextBlock>
+                                </StackPanel>
+                                <Border Grid.Column="2" Width="300"
+                                        Height="50"
+                                        CornerRadius="20"
+                                        HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0 14 18 14">
+                                    <ListView ItemsSource="{Binding GetTag}"
+                                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent">
+                                    <ListView.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel/>
+                                        </ItemsPanelTemplate>
+                                    </ListView.ItemsPanel>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Width="100"
+                                                    Height="36"
+                                                        BorderThickness="2"
+                                                        CornerRadius="10"
+                                                    Background="White"
+                                                    HorizontalAlignment="Right">
+                                                    <TextBlock Text="{Binding NameTag}"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center"/>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="txbAuthUser"
+                       TextAlignment="Right"
+                        FontFamily="Montserrat"
+                        FontSize="18"
+                        Foreground="#04306C"
+                       Margin="0 30 30 0"></TextBlock>
+            <Border Grid.Row="2"
+                    Background="#848C9B"
+                    CornerRadius="10"
+                    Margin="0 0 30 41">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="6*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="19 32 150 0">
+                    <TextBlock  FontFamily="Montserrat"
+                                Foreground="White"
+                                FontSize="18"
+                                Text="Наименование"></TextBlock>
+                        <TextBox Background="#848C9B"
+                                 BorderBrush="White"
+                                 Foreground="White"
+                                 Width="280"
+                                 Height="40"
+                                 Margin="0 20 0 25"
+                                 x:Name="tbName"
+                                 Padding="10"
+                                 FontFamily="Montserrat"
+                                 VerticalContentAlignment="Center"></TextBox>
+                        <TextBlock  FontFamily="Montserrat"
+                                Foreground="White"
+                                FontSize="18"
+                                Text="Стоимость"></TextBlock>
+                        <TextBox Background="#848C9B"
+                                 BorderBrush="White"
+                                 Foreground="White"
+                                 Width="280"
+                                 Height="40"
+                                 Margin="0 20 0 25"
+                                 x:Name="tbCost"
+                                 FontFamily="Montserrat"
+                                 Padding="10"
+                                 VerticalContentAlignment="Center"></TextBox>
+                        <TextBlock  FontFamily="Montserrat"
+                                Foreground="White"
+                                FontSize="18"
+                                Text="Описание"></TextBlock>
+                        <TextBox Background="#848C9B"
+                                 BorderBrush="White"
+                                 Foreground="White"
+                                 Width="280"
+                                 Height="175"
+                                 Margin="0 20 0 25"
+                                 x:Name="tbDes"
+                                 TextWrapping="Wrap"
+                                 Padding="10"
+                                 FontFamily="Montserrat"
+                                 VerticalContentAlignment="Center"></TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Button  Width="186"
+                                Height="53"
+                                Background="#091A36"
+                                Content="Сохранить"
+                                FontFamily="Montserrat"
+                                Foreground="White"
+                                FontSize="14"
+                                x:Name="btnOrder"
+                                Margin="33 0 28 0" Click="btnSave_Click"></Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

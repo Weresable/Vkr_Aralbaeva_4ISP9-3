@@ -1,0 +1,122 @@
+﻿<Window x:Class="Vkr_Aralbaeva.Admin.AddTrainer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vkr_Aralbaeva.Admin"
+        mc:Ignorable="d"
+        Title="AddTrainer" Height="925" Width="953"
+         MinHeight="925" MinWidth="953"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.75*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="1" x:Name="btnClose" Width="30" Height="30"
+                    Margin="35 0"
+                    Background="Transparent"
+                HorizontalAlignment="Right"
+                    BorderBrush="Transparent" Click="btnClose_Click">
+            <Image Source="/Resources\Icons\btncloseicon.png"></Image>
+        </Button>
+        <Border Grid.RowSpan="3" Grid.ColumnSpan="2"
+                BorderThickness="8"
+                CornerRadius="10"
+                BorderBrush="#091A36"></Border>
+        <TextBlock Text="Добавить тренера"
+                   x:Name="tbxTitle"
+                       FontSize="24"
+                       FontFamily="Monteserrat"
+                       FontWeight="SemiBold"
+                       Foreground="#091A36"
+                       Margin="38 28 0 0"
+                       ></TextBlock>
+        <StackPanel Margin="38 0 71 0" Grid.Row="1">
+            <TextBlock Text="Информация о тренере"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       FontWeight="SemiBold"
+                       Foreground="#091A36"></TextBlock>
+            <TextBlock Text="Фамилия"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 31 0 12.5 "></TextBlock>
+            <TextBox Height="53"
+                     x:Name="tbLastName"
+                     VerticalContentAlignment="Center"
+                         Padding="10"></TextBox>
+            <TextBlock Text="Имя"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 30 0 12.5 "></TextBlock>
+            <TextBox Height="53"
+                      x:Name="tbFirstName"
+                     VerticalContentAlignment="Center"
+                         Padding="10"></TextBox>
+            <TextBlock Text="Отчество"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 30 0 12.5 "></TextBlock>
+            <TextBox Height="53"
+                      x:Name="tbPatr"
+                     VerticalContentAlignment="Center"
+                         Padding="10"></TextBox>
+            <TextBlock Text="Номер телефона"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 30 0 12.5 "></TextBlock>
+            <TextBox Height="53"
+                      x:Name="tbPhone"
+                     VerticalContentAlignment="Center"
+                         Padding="10"></TextBox>
+            <TextBlock Text="Email"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 30 0 12.5 "></TextBlock>
+            <TextBox Height="53"
+                      x:Name="tbEmail"
+                     VerticalContentAlignment="Center"
+                         Padding="10"></TextBox>
+            <TextBlock Text="Дата рождения"
+                       FontSize="18"
+                       FontFamily="Monteserrat"
+                       Foreground="#091A36"
+                       Margin="0 30 0 12.5 "></TextBlock>
+            <TextBox Height="53"
+                      x:Name="tbDateBirth"
+                     VerticalContentAlignment="Center"
+                         Padding="10"></TextBox>
+        </StackPanel>
+        <Button Grid.Row="2"  Width="186"
+                Height="53"
+                Background="#F2C94C"
+                Content="Добавить тренера"
+                Foreground="#04306C"
+                FontSize="14"
+                FontFamily="Monteserrat"
+                x:Name="btnAddTrainer" Click="btnAddTrainer_Click"></Button>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+        <Image  Width="319" Height="322" VerticalAlignment="Top" Margin="0 42"
+                Source="/Resources/Icons/deleteicon.PNG"></Image>
+            <Button Width="186"
+                       Height="53"
+                       Content="Обзор..."
+                       Foreground="White"
+                        FontFamily="Montserrat"
+                       Background="#091A36"
+                        Margin="40 0" ></Button>
+
+        </StackPanel>
+    </Grid>
+</Window>

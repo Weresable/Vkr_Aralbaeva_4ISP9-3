@@ -1,0 +1,56 @@
+﻿<Window x:Class="Vkr_Aralbaeva.Trainer.MainTrainerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vkr_Aralbaeva.Trainer"
+        mc:Ignorable="d"
+        Title="MainTrainerWindow" Height="900" Width="1360"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#091A36">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="114*"></ColumnDefinition>
+            <ColumnDefinition Width="1218*"></ColumnDefinition>
+            <ColumnDefinition Width="22*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Frame Grid.Column="1" 
+               Margin="0 20"
+               x:Name="frmMain"
+               NavigationUIVisibility="Hidden">
+
+        </Frame>
+        <StackPanel Margin="10,24,10.4,24.4">
+            <TextBlock FontSize="16" 
+                       Foreground="White" 
+                       Text="Расписание"
+                       HorizontalAlignment="Center"
+                       FontFamily="Montserrat"
+                       FontWeight="SemiBold"></TextBlock>
+            <Button Height="60" 
+                    Width="60"
+                    Margin="16,12,0,20"
+                    Background="#7FFFFFFF" HorizontalAlignment="Left" Click="Button_Click">
+                <Image Source="/Resources\Icons\addserviceicon.png"
+                       Height="30"
+                       Width="30"></Image>
+            </Button>
+            <TextBlock FontSize="16" 
+                       Foreground="White" 
+                       Text="Выйти"
+                       HorizontalAlignment="Center"
+                       FontFamily="Montserrat"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Bottom"
+                       Margin="0 590 0 0"></TextBlock>
+            <Button Height="60" 
+                    Width="60"
+                    VerticalAlignment="Bottom"
+                    Margin="0 12 0 20"
+                    Background="#7FFFFFFF" Click="Button_Click_Close">
+                <Image Source="/Resources\Icons\logouticon.png"
+                       Height="30"
+                       Width="30"></Image>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

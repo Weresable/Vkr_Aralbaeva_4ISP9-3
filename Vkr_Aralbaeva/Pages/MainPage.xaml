@@ -1,0 +1,110 @@
+﻿<Page x:Class="Vkr_Aralbaeva.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Vkr_Aralbaeva.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1218"
+      Title="MainPage">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="201*"/>
+            <RowDefinition Height="559*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="20" Grid.RowSpan="3">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Offset="0.338" Color="White"/>
+                    <GradientStop Offset="1" Color="#7FFFFFFF"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <TextBlock Text="Безопасные полеты на частном 
+                       самолете в Москве"
+                       FontFamily="Montserrat"
+                       FontSize="48"
+                       Foreground="#04306C"
+                       FontWeight="SemiBold"
+                       Margin="33 77 0 0"
+                       TextWrapping="Wrap"></TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="692*"/>
+                <ColumnDefinition Width="531*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Margin="0 31 0 0">
+                <TextBlock Text="Невероятные свидания, пилотирование
+                               или сертификат на любую из 5 услуг для 
+                               полетов от 15 минут"
+                               FontFamily="Montserrat"
+                               FontSize="24"
+                               Foreground="#04306C"
+                               FontWeight="Regular"
+                               TextWrapping="Wrap"
+                               Margin="33 0 0 0"></TextBlock>
+                <Image Width="667" 
+                           Height="204"
+                           Margin="0 89 0 0"
+                           Source="/Resources\Icons\servicemainicon.png"></Image>
+            </StackPanel>
+            <Grid Grid.Column="1">
+                <Border Height="409" 
+                            Width="1"
+                            HorizontalAlignment="Left"
+                            Background="#04306C"></Border>
+                <StackPanel>
+                    <StackPanel Orientation="Vertical"
+                                    Margin="0 31 0 0">
+                        <TextBlock Text="Вы авторизовались как:"
+                                       FontFamily="Montserrat"
+                                       FontSize="24"
+                                       Foreground="#04306C"
+                                       FontWeight="Medium"
+                                       TextWrapping="Wrap"
+                                       HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock x:Name="tbxAuthUserRole"
+                                       FontFamily="Montserrat"
+                                       FontSize="24"
+                                       Foreground="#04306C"
+                                       FontWeight="Medium"
+                                       TextWrapping="Wrap"
+                                       Margin="0 59 0 0"
+                                       HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock x:Name="txbAuthUser"
+                                       FontFamily="Montserrat"
+                                       FontSize="24"
+                                       Foreground="#04306C"
+                                       FontWeight="Bold"
+                                       TextWrapping="Wrap"
+                                       Margin="0 30 0 0"
+                                       HorizontalAlignment="Center"></TextBlock>
+                        <Image Source="/Resources\Icons\authicon.png"
+                                   Height="100"
+                                   Width="100"
+                                   Margin="0 52"></Image>
+                    </StackPanel>
+                    <Button Width="186"
+                                Height="53"
+                                Margin="0 31 0 0"
+                                Background="#091A36"
+                                Content="Выйти"
+                                FontFamily="Montserrat"
+                                Foreground="White"
+                                FontWeight="Medium"
+                                FontSize="18" Click="Button_Click"></Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <TextBlock Grid.Row="2" 
+                       Text="Скидка 30% на второй сертификат"
+                       FontFamily="Montserrat"
+                       FontSize="24"
+                       Foreground="#04306C"
+                       FontWeight="SemiBold"
+                       TextWrapping="Wrap"
+                       Margin="33 0 0 0"></TextBlock>
+    </Grid>
+</Page>
