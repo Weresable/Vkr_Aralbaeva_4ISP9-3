@@ -52,6 +52,14 @@
                           VerticalContentAlignment="Center"
                           Padding="10"
                           x:Name="cmbSort" Style="{DynamicResource ComboBoxStyle1}" SelectionChanged="cmbSort_SelectionChanged"/>
+                <Button x:Name="btnClose" Width="53" Height="53"
+                Margin="15 5"
+                Background="Transparent"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                    BorderBrush="Transparent" Click="btnClean_Click">
+                    <Image Source="/Resources\Icons\cleanFilterIcon.png"></Image>
+                </Button>
             </StackPanel>
             <Grid Grid.Row="2">
                 <Border Width="700"

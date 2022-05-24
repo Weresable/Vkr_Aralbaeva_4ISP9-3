@@ -28,7 +28,7 @@ namespace Vkr_Aralbaeva.Pages
         {
             InitializeComponent();
             txbAuthUser.Text = authUser.InicialRole;
-            LVOrder.ItemsSource = context.Order.ToList();
+            LVOrder.ItemsSource = context.Order.OrderByDescending(i=>i.DateOfService).ToList();
             LVTag.ItemsSource = context.Tag.ToList();
             cmbSort.ItemsSource = new List<string>{
                 "По умолчанию",
@@ -85,6 +85,16 @@ namespace Vkr_Aralbaeva.Pages
         {
             Data.Tag item = LVTag.SelectedItem as Data.Tag;
             LVOrder.ItemsSource = context.Order.ToList().Where(i => i.Service.Tag.Contains(item));
+        }
+
+        private void btnClean_Click(object sender, RoutedEventArgs e)
+        {
+
+            LVOrder.ItemsSource = context.Service.ToList();
+            tbFind.Text = "";
+            cmbSort.SelectedIndex = 0;
+            context.SaveChanges();
+            Filter();
         }
     }
 }

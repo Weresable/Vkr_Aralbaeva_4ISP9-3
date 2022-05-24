@@ -96,6 +96,16 @@ namespace Vkr_Aralbaeva.Pages
             Data.Tag item = LVTag.SelectedItem as Data.Tag;
             LVTrainerShedule.ItemsSource = context.Order.ToList().Where(i => i.Service.Tag.Contains(item) && i.Worker.IdWorker == authUser.IdWorker); 
         }
+
+        private void btnClean_Click(object sender, RoutedEventArgs e)
+        {
+
+            LVTrainerShedule.ItemsSource = context.Service.ToList();
+            tbFind.Text = "";
+            cmbSort.SelectedIndex = 0;
+            context.SaveChanges();
+            Filter();
+        }
     }
 }
 

@@ -50,6 +50,14 @@
                         FontFamily="Montserrat"
                        Background="#091A36"
                         Margin="49 0" Click="Btn_AddClient"></Button>
+                <Button x:Name="btnClose" Width="53" Height="53"
+                Margin="15 5"
+                Background="Transparent"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                    BorderBrush="Transparent" Click="btnClean_Click">
+                    <Image Source="/Resources\Icons\cleanFilterIcon.png"></Image>
+                </Button>
             </StackPanel>
             <ListView x:Name="LVClient" Grid.Row="2" Grid.RowSpan="2" Background="Transparent" 
                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"

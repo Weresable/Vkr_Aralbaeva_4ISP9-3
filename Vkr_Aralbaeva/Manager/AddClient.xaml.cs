@@ -44,6 +44,7 @@ namespace Vkr_Aralbaeva.Manager
                 Email = tbEmail.Text,
 
             });
+            MessageBox.Show("Тренер успешно изменён", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             context.SaveChanges();
             this.Close();
         }

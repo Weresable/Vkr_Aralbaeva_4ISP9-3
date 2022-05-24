@@ -71,34 +71,6 @@
     <Compile Include="Admin\MainAdminWindow.xaml.cs">
       <DependentUpon>MainAdminWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AdminService.xaml.cs">
-      <DependentUpon>AdminService.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AdminTrainer.xaml.cs">
-      <DependentUpon>AdminTrainer.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\TrainerShedule.xaml.cs">
-      <DependentUpon>TrainerShedule.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Trainer\MainTrainerWindow.xaml.cs">
-      <DependentUpon>MainTrainerWindow.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Admin\AddTrainer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Admin\MainAdminWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Data\BaseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -117,21 +89,22 @@
     <Compile Include="Data\Customer.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\DataHelp.cs" />
-    <Compile Include="Data\HelpClass.cs" />
     <Compile Include="Data\Order.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminService.xaml.cs">
+      <DependentUpon>AdminService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminTrainer.xaml.cs">
+      <DependentUpon>AdminTrainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TrainerShedule.xaml.cs">
+      <DependentUpon>TrainerShedule.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Role.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Service.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\sp_helpdiagrams_Result.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\sysdiagrams.cs">
@@ -140,9 +113,30 @@
     <Compile Include="Data\Tag.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Trainer\MainTrainerWindow.xaml.cs">
+      <DependentUpon>MainTrainerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Worker.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Page Include="Admin\AddTrainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\MainAdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\DataHelp.cs" />
+    <Compile Include="Data\HelpClass.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -262,16 +256,10 @@
     <Resource Include="Resources\Icons\authicon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\BaseModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseModel.Context.cs</LastGenOutput>
-      <DependentUpon>BaseModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Data\BaseModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaseModel.edmx</DependentUpon>
-      <LastGenOutput>BaseModel.cs</LastGenOutput>
-    </Content>
+    <Resource Include="Resources\Service\airballoon.png" />
+    <Resource Include="Resources\Service\camera.png" />
+    <Resource Include="Resources\Icons\cleanfiltericon.png" />
+    <Resource Include="Resources\Worker\9.png" />
     <Resource Include="Resources\Icons\airplaneicon.png" />
     <Resource Include="Resources\Icons\manicon.png" />
     <Resource Include="Resources\Worker\1.png" />
@@ -290,6 +278,17 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\BaseModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseModel.edmx</DependentUpon>
+      <LastGenOutput>BaseModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\BaseModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseModel.edmx</DependentUpon>
+      <LastGenOutput>BaseModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

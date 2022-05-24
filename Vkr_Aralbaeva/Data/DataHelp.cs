@@ -9,7 +9,7 @@ namespace Vkr_Aralbaeva.Data
 {
     class DataHelp
     {
-        public static Entities context = new Entities();
+        public static EntitiesDB context = new EntitiesDB();
         public static Worker authUser;
         public static Customer selectedClient = null;
         public static Worker selectedWorker = null;

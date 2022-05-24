@@ -94,7 +94,7 @@ namespace Vkr_Aralbaeva.Pages
                     item.MinDescription = tbDes.Text;
                     item.Cost = Convert.ToInt32(tbCost.Text);
                     item.NameService = tbName.Text;
-                    MessageBox.Show("Новая услуга успешно создана", "Успех", MessageBoxButton.OK);
+                    MessageBox.Show("Услуга успешно изменена", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
@@ -104,7 +104,7 @@ namespace Vkr_Aralbaeva.Pages
                         Cost = Convert.ToInt32(tbCost.Text),
                         NameService = tbName.Text
                     });
-                    MessageBox.Show("Услуга успешно изменена", "Успех", MessageBoxButton.OK);
+                    MessageBox.Show("Новая услуга успешно создана", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 context.SaveChanges();
                 LVService.ItemsSource = context.Service.ToList();
@@ -139,6 +139,15 @@ namespace Vkr_Aralbaeva.Pages
         {
             Data.Tag item = LVTag.SelectedItem as Data.Tag;
             LVService.ItemsSource = context.Service.ToList().Where(i => i.Tag.Contains(item));
+        }
+
+        private void btnClean_Click(object sender, RoutedEventArgs e)
+        {
+            LVService.ItemsSource = context.Service.ToList();
+            tbFind.Text = "";
+            cmbSort.SelectedIndex = 0;
+            context.SaveChanges();
+            Filter();
         }
     }
 }

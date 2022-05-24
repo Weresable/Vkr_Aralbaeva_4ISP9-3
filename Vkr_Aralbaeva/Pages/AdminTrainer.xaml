@@ -29,8 +29,8 @@
                        FontWeight="SemiBold"
                        Margin="38 30 0 0"
                    Text="Список тренеров"></TextBlock>
-            <StackPanel Margin="38 0" Grid.Row="1" Orientation="Horizontal">
-                <TextBox Height="53" 
+        <StackPanel Margin="38 0" Grid.Row="1" Orientation="Horizontal">
+            <TextBox Height="53" 
                          Width="268"
                          
                          x:Name="tbFind" 
@@ -39,7 +39,7 @@
                          FontSize="16"
                          VerticalContentAlignment="Center"
                          Padding="10"></TextBox>
-                <ComboBox Width="268"
+            <ComboBox Width="268"
                           Height="53"
                           Margin="20 0"
                           x:Name="cmbSort"
@@ -47,7 +47,15 @@
                           FontSize="16"
                           VerticalContentAlignment="Center"
                           Padding="10" SelectionChanged="cmbSort_SelectionChanged" Style="{DynamicResource ComboBoxStyle1}"></ComboBox>
-            </StackPanel>
+            <Button x:Name="btnClose" Width="53"
+                Margin="35,10,35,12.2"
+                Background="Transparent"
+                HorizontalAlignment="Right"
+                    BorderBrush="Transparent" Click="btnClean_Click">
+                <Image Source="/Resources\Icons\cleanFilterIcon.png"></Image>
+            </Button>
+        </StackPanel>
+
 
         <TextBlock x:Name="txbAuthUser"
                        TextAlignment="Right"
@@ -69,53 +77,53 @@
                 <DataTemplate>
                     <Grid Width="550"
               Height="260">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="260"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Image Width="260" Height="255">
-                <Image.Source>
-                    <Binding Path="ImgSourse">
-                        <Binding.TargetNullValue>
-                            <ImageSource>/Resources/Icons/manicon.png</ImageSource>
-                        </Binding.TargetNullValue>
-                    </Binding> 
-                </Image.Source>
-            </Image>
-            <StackPanel Margin="26 10 0 0" Grid.Column="1">
-                <TextBlock  FontFamily="Montserrat"
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="260"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Width="260" Height="255">
+                            <Image.Source>
+                                <Binding Path="ImgSourse">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>/Resources/Icons/manicon.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <StackPanel Margin="26 10 0 0" Grid.Column="1">
+                            <TextBlock  FontFamily="Montserrat"
                           FontSize="24"
                             Foreground="#04306C"
                             Text="{Binding LastName}"></TextBlock>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock  FontFamily="Montserrat"
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock  FontFamily="Montserrat"
                           FontSize="24"
                             Foreground="#04306C"
                             Text="{Binding FirstName}"></TextBlock>
-                    <TextBlock  FontFamily="Montserrat"
+                                <TextBlock  FontFamily="Montserrat"
                           FontSize="24"
                             Foreground="#04306C"
                             Text="{Binding Patronymic}"
                                 Margin="10 0"></TextBlock>
-                </StackPanel>
-                <TextBlock  FontFamily="Montserrat"
+                            </StackPanel>
+                            <TextBlock  FontFamily="Montserrat"
                           FontSize="24"
                             Foreground="#04306C"
                             Text="Возраст:"></TextBlock>
-                <TextBlock  FontFamily="Montserrat"
+                            <TextBlock  FontFamily="Montserrat"
                           FontSize="24"
                             Foreground="#04306C"
                             Text="{Binding Age}"></TextBlock>
-                <TextBlock  FontFamily="Montserrat"
+                            <TextBlock  FontFamily="Montserrat"
                           FontSize="24"
                             Foreground="#04306C"
                             Text="Телефон:"></TextBlock>
-                <TextBlock  FontFamily="Montserrat"
+                            <TextBlock  FontFamily="Montserrat"
                           FontSize="24"
                             Foreground="#04306C"
                             Text="{Binding Phone}"></TextBlock>
-            </StackPanel>
-        </Grid>
+                        </StackPanel>
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

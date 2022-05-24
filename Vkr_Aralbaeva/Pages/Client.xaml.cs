@@ -72,5 +72,13 @@ namespace Vkr_Aralbaeva.Pages
 
             frame.Navigate(new AddOrder());
         }
+
+        private void btnClean_Click(object sender, RoutedEventArgs e)
+        {
+
+            LVClient.ItemsSource = context.Service.ToList();
+            tbFind.Text = "";
+            context.SaveChanges();
+        }
     }
 }

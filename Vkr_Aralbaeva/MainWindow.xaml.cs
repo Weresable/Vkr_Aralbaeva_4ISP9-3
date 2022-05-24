@@ -54,12 +54,12 @@ namespace Vkr_Aralbaeva
                 }
                 else
                 {
-                    MessageBox.Show("Неправильный пароль или логин");
+                    MessageBox.Show("Неправильный пароль или логин", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Введите пароль и логин");
+                MessageBox.Show("Введите пароль и логин", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

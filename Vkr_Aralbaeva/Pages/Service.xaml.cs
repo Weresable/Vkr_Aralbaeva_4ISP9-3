@@ -96,6 +96,14 @@ namespace Vkr_Aralbaeva.Pages
             frame.Navigate(new AddOrder());
         }
 
+        private void btnClean_Click(object sender, RoutedEventArgs e)
+        {
 
+            LVService.ItemsSource = context.Service.ToList();
+            tbFind.Text = "";
+            cmbSort.SelectedIndex = 0;
+            context.SaveChanges();
+            Filter();
+        }
     }
 }

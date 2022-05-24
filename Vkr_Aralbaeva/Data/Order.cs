@@ -14,12 +14,6 @@ namespace Vkr_Aralbaeva.Data
     
     public partial class Order
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
-        {
-            this.Service1 = new HashSet<Service>();
-        }
-    
         public int IdOrder { get; set; }
         public int IdCustomer { get; set; }
         public System.DateTime DateOfOrder { get; set; }
@@ -30,7 +24,5 @@ namespace Vkr_Aralbaeva.Data
         public virtual Customer Customer { get; set; }
         public virtual Service Service { get; set; }
         public virtual Worker Worker { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Service> Service1 { get; set; }
     }
 }

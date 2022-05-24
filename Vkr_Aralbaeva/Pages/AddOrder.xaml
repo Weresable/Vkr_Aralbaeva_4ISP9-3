@@ -183,7 +183,7 @@
                                    Foreground="White"
                                    TextWrapping="Wrap"
                                    FontWeight="Medium"
-                                   Text="Цена"
+                                   Text=""
                                     x:Name="tbCost"></TextBlock>
                         <TextBlock  FontFamily="Montserrat"
                                    FontSize="16"
@@ -225,11 +225,12 @@
                     <Button Width="150"
                        Height="53"
                        Content="Выбрать услугу"
-                       Foreground="White"
-                        FontFamily="Montserrat"
-                       Background="#091A36"
-                         Click="Btn_AddService"
-                            Margin="30"></Button>
+                       Foreground="#091A36"
+                       FontFamily="Montserrat"
+                       Background="White"
+                       Click="Btn_AddService"
+                       Margin="30"
+                       VerticalAlignment="Center"></Button>
                 </StackPanel>
             </Grid>
         </Grid>

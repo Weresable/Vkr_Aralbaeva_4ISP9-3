@@ -18,7 +18,6 @@ namespace Vkr_Aralbaeva.Data
         public Service()
         {
             this.Order = new HashSet<Order>();
-            this.Order1 = new HashSet<Order>();
             this.Tag = new HashSet<Tag>();
         }
     
@@ -31,8 +30,6 @@ namespace Vkr_Aralbaeva.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tag> Tag { get; set; }
     }

@@ -107,15 +107,20 @@
                 FontFamily="Monteserrat"
                 x:Name="btnAddTrainer" Click="btnAddTrainer_Click"></Button>
         <StackPanel Grid.Row="1" Grid.Column="1">
-        <Image  Width="319" Height="322" VerticalAlignment="Top" Margin="0 42"
-                Source="/Resources/Icons/deleteicon.PNG"></Image>
+            <Border BorderBrush="#091A36"
+                    BorderThickness="3"
+                    Width="319" Height="322" VerticalAlignment="Top" Margin="0 42">
+                <Image  
+                x:Name="Image"></Image>
+            </Border>
+        
             <Button Width="186"
                        Height="53"
                        Content="Обзор..."
                        Foreground="White"
                         FontFamily="Montserrat"
                        Background="#091A36"
-                        Margin="40 0" ></Button>
+                        Margin="40 0" Click="Btn_AddImage_Clic" ></Button>
 
         </StackPanel>
     </Grid>
