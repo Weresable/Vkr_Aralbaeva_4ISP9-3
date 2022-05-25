@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static Vkr_Aralbaeva.Data.DataHelp;
 using Vkr_Aralbaeva.Data;
+using Vkr_Aralbaeva.Pages;
 using Vkr_Aralbaeva.Manager;
 
 namespace Vkr_Aralbaeva.Manager
@@ -44,8 +45,9 @@ namespace Vkr_Aralbaeva.Manager
                 Email = tbEmail.Text,
 
             });
-            MessageBox.Show("Тренер успешно изменён", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Клиент успешно добавлен", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             context.SaveChanges();
+            frame.Navigate(new AddOrder());
             this.Close();
         }
     }
