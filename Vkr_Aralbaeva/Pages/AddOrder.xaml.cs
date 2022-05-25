@@ -37,8 +37,8 @@ namespace Vkr_Aralbaeva.Pages
                 tbPatr.Text = selectedClient.Patronymic;
                 tbPhone.Text = selectedClient.Phone;
                 tbEmail.Text = selectedClient.Email;
-                tbDateBirth.Text = selectedClient.DateOfBirth.ToString();
-                
+                tbDateBirth.Text = selectedClient.DateOfBirth.ToString("dd.MM.yyyy");
+
             }
             if (selectedService != null)
             {
